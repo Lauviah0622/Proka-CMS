@@ -22,7 +22,7 @@ collections:
     description: 'the posts'
     identifier_field: author
     name: 'blog'
-    folder: 'pages/posts'
+    folder: 'apps/site/pages/posts'
     slug: '{{year}}-{{slug}}'
     preview_path: 'posts/{{slug}}'
     create: true
