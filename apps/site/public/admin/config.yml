@@ -11,6 +11,8 @@ public_folder: '/static/img'
 # Please run "npx netlify-cms-proxy-server" for local backend
 # local_backend: true
 # publish_mode: editorial_workflow
+display_url: 'https://tranquil-fenglisu-1a2cc0.netlify.app/'
+site_url: 'https://tranquil-fenglisu-1a2cc0.netlify.app/'
 show_preview_links: true
 publish_mode: editorial_workflow
 # slug: 
