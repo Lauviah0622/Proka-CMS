@@ -1,0 +1,22 @@
+---
+import Toc from '~/components/Toc/Toc.jsx'
+import '~/components/Toc/Toc.css'
+
+const { headings } = Astro.props
+---
+
+<aside>
+  {headings &&
+  <Toc client:media="(min-width: 80em)" headings={headings} />}
+</aside>
+
+<style>
+  :global(aside) {
+    position: fixed;
+    right: 0;
+    z-index: 99;
+    @media screen and (max-width: 80rem) {
+      display: none;
+    }
+  }
+</style>

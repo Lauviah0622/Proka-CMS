@@ -1,0 +1,13 @@
+---
+import Date from '~/components/Date.astro'
+
+const { date, minutesRead } = Astro.props
+const ceilMin = Math.ceil(minutesRead)
+const souldDShowReadTime = ceilMin > 1
+const text = `・${ceilMin}min`
+---
+
+<div class="time">
+  <Date date={date} naked={true} />
+  {souldDShowReadTime && text}
+</div>

@@ -17,7 +17,7 @@ publish_mode: editorial_workflow
 # slug: 
   # encoding: "ascii"
 collections:
-  - label: 'posts'
+  - label: 'Posts'
     description: 'the posts'
     identifier_field: author
     name: 'blog'

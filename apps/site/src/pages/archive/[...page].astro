@@ -1,0 +1,18 @@
+---
+import Archive from '~/layouts/Archive.astro'
+import sort from '~/utils/sortPosts'
+
+export async function getStaticPaths({ paginate }) {
+  const PAGE_SIZE = 20
+  let allPosts = await Astro.glob('/src/pages/posts/*.md')
+  const sortedPage = sort([...allPosts])
+
+  return paginate(sortedPage, { pageSize: PAGE_SIZE })
+}
+
+const { page } = Astro.props
+
+const baseUrl = '/archive/'
+---
+
+<Archive page={page} baseUrl={baseUrl} />
