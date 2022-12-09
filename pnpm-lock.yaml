@@ -27,6 +27,7 @@ importers:
       postcss-nesting: ^10.1.10
       react: ^18.0.0
       react-dom: ^18.0.0
+      react-markdown: ^8.0.4
       reading-time: ^1.5.0
       rehype-autolink-headings: ^6.1.1
       rehype-figure: ^1.0.1
@@ -48,6 +49,7 @@ importers:
       netlify-cms-app: 2.15.72_2zx2umvpluuhvlq44va5bta2da
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-markdown: 8.0.4_fan5qbzahqtxlm5dzefqlqx5ia
       reading-time: 1.5.0
     devDependencies:
       '@astrojs/rss': 0.2.2
@@ -5986,6 +5988,10 @@ packages:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: false
 
+  /react-is/18.2.0:
+    resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+    dev: false
+
   /react-lifecycles-compat/3.0.4:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
     dev: false
@@ -6011,6 +6017,33 @@ packages:
       unified: 9.2.2
       unist-util-visit: 2.0.3
       vfile: 4.2.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /react-markdown/8.0.4_fan5qbzahqtxlm5dzefqlqx5ia:
+    resolution: {integrity: sha512-2oxHa6oDxc1apg/Gnc1Goh06t3B617xeywqI/92wmDV9FELI6ayRkwge7w7DoEqM0gRpZGTNU6xQG+YpJISnVg==}
+    peerDependencies:
+      '@types/react': '>=16'
+      react: '>=16'
+    dependencies:
+      '@types/hast': 2.3.4
+      '@types/prop-types': 15.7.5
+      '@types/react': 18.0.25
+      '@types/unist': 2.0.6
+      comma-separated-tokens: 2.0.3
+      hast-util-whitespace: 2.0.0
+      prop-types: 15.8.1
+      property-information: 6.2.0
+      react: 18.2.0
+      react-is: 18.2.0
+      remark-parse: 10.0.1
+      remark-rehype: 10.1.0
+      space-separated-tokens: 2.0.2
+      style-to-object: 0.3.0
+      unified: 10.1.2
+      unist-util-visit: 4.1.1
+      vfile: 5.3.6
     transitivePeerDependencies:
       - supports-color
     dev: false
