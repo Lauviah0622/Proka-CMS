@@ -13,9 +13,6 @@ public_folder: '/images'
 display_url: 'https://tranquil-fenglisu-1a2cc0.netlify.app/'
 site_url: 'https://tranquil-fenglisu-1a2cc0.netlify.app/'
 show_preview_links: true
-publish_mode: editorial_workflow
-# slug:
-# encoding: "ascii"
 collections:
   - label: 'Posts'
     description: 'the posts'

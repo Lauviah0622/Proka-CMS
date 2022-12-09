@@ -10,9 +10,10 @@ export async function getStaticPaths() {
     tags: string[]
   }
 
-  const posts = await Astro.glob<Frontmatter>('../posts/*.md')
+  const posts = await Astro.glob<Frontmatter>('../../publish/posts/*.md')
+
   return posts.map((post) => ({
-    params: { slug: post.url?.match(/[\w\-]*$/)?.[0] },
+    params: { slug: post.file?.match(/([\w\-]*).md$/)?.[1] },
     props: {
       post,
     },
