@@ -12,10 +12,10 @@ export default {
 
   navLink: {
     posts: '/posts',
-    tips: '/tips',
-    archive: '/archive',
-    tags: '/tags',
-    collection: '/collection',
+    // tips: '/tips',
+    // archive: '/archive',
+    // tags: '/tags',
+    // collection: '/collection',
     // about: '/about',
   },
   title: {
