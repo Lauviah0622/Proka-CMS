@@ -21,7 +21,7 @@ collections:
     description: 'the posts'
     identifier_field: author
     name: 'blog'
-    folder: 'apps/site/src/pages/posts'
+    folder: 'apps/site/src/publish/posts'
     slug: '{{year}}-{{slug}}'
     preview_path: 'posts/{{slug}}'
     create: true
