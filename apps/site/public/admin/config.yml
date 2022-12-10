@@ -40,17 +40,17 @@ collections:
         create: true
         options: ['Tags', 'created', 'from', 'config.yml']
   - label: 'Product'
-    identifier_field: title
+    identifier_field: product_title
     folder: 'apps/site/src/publish/product'
-    name: 'store'
+    name: 'product'
     slug: '{{slug}}'
-    preview_path: 'store/{{slug}}'
+    preview_path: 'product/{{slug}}'
     editor:
       preview: false
     create: true
     fields:
       - { label: '產品名稱', name: 'product_title', widget: 'string' }
-      - { label: '產引描述', name: 'product_description', widget: 'string' }
+      - { label: '產品描述', name: 'product_description', widget: 'string' }
       - { label: '產品縮圖照', name: 'product_avatar', widget: 'image' }
       - label: '產品照片'
         name: 'avatar'
@@ -61,11 +61,12 @@ collections:
         name: product_categories
         required: false
         widget: 'relation'
+        multiple: true
         collection: 'settings'
-        file: 'apps/site/src/publish/settings/categories.yml'
-        search_fields: ['name']
-        value_field: 'name'
-        display_fields: ['name']
+        file: 'categories'
+        search_fields: ['categories.*.name']
+        value_field: 'categories.*.name'
+        display_fields: ['categories.*.name']
   - label: 'Setting'
     name: 'settings'
     preview: false
@@ -73,6 +74,13 @@ collections:
       - label: '商品類別'
         name: 'categories'
         file: 'apps/site/src/publish/settings/categories.yml'
+        editor:
+          preview: false
         fields:
-          - { label: '類別名稱', name: name, widget: string }
-          - { label: '介紹', name: description, widget: string }
+          - label: 產品類別
+            widget: list
+            name: categories
+            allow_add: true
+            fields:
+              - { label: '類別名稱', name: name, widget: string }
+              - { label: '介紹', name: description, widget: string }
