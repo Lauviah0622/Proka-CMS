@@ -19,7 +19,7 @@ publish_mode: editorial_workflow
 collections:
   - label: 'Posts'
     description: 'the posts'
-    identifier_field: author
+    identifier_field: title
     name: 'blog'
     folder: 'apps/site/src/publish/posts'
     slug: '{{year}}-{{slug}}'
