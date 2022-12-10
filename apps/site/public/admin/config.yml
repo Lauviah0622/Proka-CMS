@@ -23,7 +23,7 @@ collections:
     name: 'blog'
     folder: 'apps/site/src/publish/posts'
     slug: '{{year}}-{{slug}}'
-    preview_path: 'posts/{{slug}}'
+    preview_path: 'post/{{slug}}'
     create: true
     editor:
       preview: true
@@ -39,3 +39,40 @@ collections:
         multiple: true
         create: true
         options: ['Tags', 'created', 'from', 'config.yml']
+  - label: 'Product'
+    identifier_field: title
+    folder: 'apps/site/src/publish/product'
+    name: 'store'
+    slug: '{{slug}}'
+    preview_path: 'store/{{slug}}'
+    editor:
+      preview: false
+    create: true
+    fields:
+      - { label: '產品名稱', name: 'product_title', widget: 'string' }
+      - { label: '產引描述', name: 'product_description', widget: 'string' }
+      - { label: '產品縮圖照', name: 'product_avatar', widget: 'image' }
+      - label: '產品照片'
+        name: 'avatar'
+        widget: 'image'
+        choose_url: false
+      - { label: '產品說明', name: 'body', widget: 'markdown' }
+      - label: '產品類型'
+        name: product_categories
+        required: false
+        widget: 'relation'
+        collection: 'settings'
+        file: 'apps/site/src/publish/settings/categories.yml'
+        search_fields: ['name']
+        value_field: 'name'
+        display_fields: ['name']
+  - label: 'Setting'
+    name: 'settings'
+    preview: false
+    files:
+      - label: '商品類別'
+        name: 'categories'
+        file: 'apps/site/src/publish/settings/categories.yml'
+        fields:
+          - { label: '類別名稱', name: name, widget: string }
+          - { label: '介紹', name: description, widget: string }
