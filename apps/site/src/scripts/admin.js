@@ -1,6 +1,6 @@
 import CMS from 'netlify-cms-app'
 import Preview from './Preivew'
-import previewStyle from '~/styles/preview.css'
+import previewStyle from './preview.css'
 //
 console.log('previewStyle', previewStyle)
 
