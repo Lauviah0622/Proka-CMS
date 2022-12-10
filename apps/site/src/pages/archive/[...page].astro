@@ -4,9 +4,9 @@ import sort from '~/utils/sortPosts'
 
 export async function getStaticPaths({ paginate }) {
   const PAGE_SIZE = 20
-  let allPosts = await Astro.glob('/src/pages/posts/*.md')
+  let allPosts = await Astro.glob('../../publish/posts/*.md')
 
-  const getSlug = (url: string) => url.match(/\/([\w-]*?)$/)?.[1]
+  const getSlug = (url: string) => url.match(/\/([\w-]*?).md$/)?.[1]
   const getTransedPostUrl = (url: string) => {
     const slug = getSlug(url)
     if (!slug) throw Error('error file path')
@@ -16,9 +16,9 @@ export async function getStaticPaths({ paginate }) {
   }
 
   const sortedPage = sort(
-    [...allPosts].map((post) => ({
+    allPosts.map((post) => ({
       ...post,
-      url: getTransedPostUrl(post.url ?? ''),
+      url: getTransedPostUrl(post.file ?? ''),
     }))
   )
   return paginate(sortedPage, { pageSize: PAGE_SIZE })
