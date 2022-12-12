@@ -52,11 +52,16 @@ collections:
       - { label: '產品名稱', name: 'product_title', widget: 'string' }
       - { label: '產品描述', name: 'product_description', widget: 'string' }
       - { label: '產品縮圖照', name: 'product_avatar', widget: 'image' }
+      - label: '產品價格'
+        name: 'product_price'
+        widget: 'number'
+        default: 2
       - label: '產品照片'
-        name: 'avatar'
+        name: 'product_image'
         widget: 'image'
         choose_url: false
       - { label: '產品說明', name: 'body', widget: 'markdown' }
+
       - label: '產品類型'
         name: product_categories
         required: false
