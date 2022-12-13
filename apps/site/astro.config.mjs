@@ -4,13 +4,14 @@ import { toString } from 'hast-util-to-string';
 import { fileURLToPath } from 'url';
 import remarkCalcReadingMin from './src/plugins/remarkCalcReadingMin.mjs';
 import react from "@astrojs/react";
+import image from "@astrojs/image";
 const root = fileURLToPath(new URL('.', import.meta.url));
 const isDev = process.env.DEV;
 const site = process.env.VERCEL_ENV === 'preview' ? process.env.PUBLIC_VERCEL_URL : process.env.SITE ?? 'http://localhost:3000';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [react(), image()],
   site,
   markdown: {
     syntaxHighlight: false,
