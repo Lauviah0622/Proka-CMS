@@ -1,0 +1,36 @@
+---
+import sort from '~/utils/sortPosts'
+import Store from '~/layouts/Store.astro'
+
+export async function getStaticPaths({ paginate }) {
+  const allProduct = await Astro.glob('../../publish/product/*.md')
+
+  console.log('allProduct', allProduct)
+
+  const getSlug = (url: string) => url.match(/\/([\w-]*?).md$/)?.[1]
+  const getTransedPostUrl = (url: string) => {
+    const slug = getSlug(url)
+    if (!slug) throw Error('error file path')
+    // TODO: put the base path into the metadata
+    const postBasePath = 'product'
+    return `/${postBasePath}/${slug}`
+  }
+
+  const sortedProducts = sort(
+    allProduct.map((product) => ({
+      ...product,
+      url: getTransedPostUrl(product.file ?? ''),
+    }))
+  )
+
+  console.log(sortedProducts)
+
+  return paginate(sortedProducts, { pageSize: 20 })
+}
+
+const { page } = Astro.props
+
+console.log('page', page)
+---
+
+<Store page={page} baseUrl={'/store/'} />

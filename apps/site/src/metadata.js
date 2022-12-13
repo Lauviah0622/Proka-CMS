@@ -1,5 +1,5 @@
 export default {
-  blogName: 'Apprentice Log',
+  blogName: 'Apple Store',
   description: 'The log of the apprentice',
   pageSize: {
     posts: 10,
@@ -11,6 +11,7 @@ export default {
   },
 
   navLink: {
+    store: '/store',
     posts: '/posts',
     // tips: '/tips',
     // archive: '/archive',

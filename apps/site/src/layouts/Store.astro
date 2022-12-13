@@ -1,0 +1,39 @@
+---
+import Base from './Base.astro'
+
+import Pagination from '~/components/Pagination/Pagination.astro'
+import ArchiveItem from '~/components/ArchiveItem.astro'
+import metadata from '~/metadata'
+import StoreItem from '~/components/StoreItem.astro'
+
+const { page, baseUrl } = Astro.props
+
+console.log(page.data.map(({ frontmatter }) => frontmatter))
+---
+
+<style>
+  .postlist {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 80rem) {
+      gap: 2rem;
+    }
+  }
+</style>
+
+<Base title={metadata.title.archive}>
+  <h1>Store</h1>
+  <ul class="flex flex-wrap">
+    {
+      page.data.map(
+        ({
+          frontmatter: { product_title: title, product_avatar: image },
+          url,
+        }) => <StoreItem link={url} title={title} image={image} />
+      )
+    }
+  </ul>
+  <Pagination page={page} baseUrl={baseUrl} />
+</Base>

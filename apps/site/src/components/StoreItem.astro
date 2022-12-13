@@ -1,0 +1,17 @@
+---
+const { image, link, title, price = 100 } = Astro.props
+---
+
+<div class="w-1/2 flex-grow-0 px-1 mb-5">
+  <div>
+    <a href={link}>
+      <img src={image} class="w-full h-xs object-cover rounded-xl" />
+    </a>
+  </div>
+  <a href={link}>
+    <h3>
+      {title}
+    </h3>
+  </a>
+  <p>NT$: {price}</p>
+</div>
