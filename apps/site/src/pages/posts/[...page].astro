@@ -1,5 +1,5 @@
 ---
-import Archive from '~/layouts/Archive.astro'
+import Posts from '~/layouts/Posts.astro'
 import sort from '~/utils/sortPosts'
 
 export async function getStaticPaths({ paginate }) {
@@ -10,7 +10,7 @@ export async function getStaticPaths({ paginate }) {
   const getTransedPostUrl = (url: string) => {
     const slug = getSlug(url)
     if (!slug) throw Error('error file path')
-    // TODO: put this into the metadata
+    // TODO: put the base path into the metadata
     const postBasePath = 'post'
     return `/${postBasePath}/${slug}`
   }
@@ -29,4 +29,4 @@ const { page } = Astro.props
 const baseUrl = '/archive/'
 ---
 
-<Archive page={page} baseUrl={baseUrl} />
+<Posts page={page} baseUrl={baseUrl} />
