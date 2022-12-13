@@ -7,6 +7,8 @@
 @import './font.css';
 @import './article.css';
 
+@import '@shoelace-style/shoelace/dist/themes/light.css';
+@import '@shoelace-style/shoelace/dist/themes/dark.css';
 @windicss;
 
 /* ================== functional global setting ================== */
@@ -241,7 +243,7 @@ body {
 .time {
   font-size: 0.9em;
   font-family: var(--font-family-serif);
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 ul {
