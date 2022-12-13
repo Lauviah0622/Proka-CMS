@@ -1,0 +1,28 @@
+---
+import Product from '~/layouts/Product.astro'
+
+export async function getStaticPaths() {
+  interface Frontmatter {
+    title: string
+    description?: string
+    author?: string
+    data: Date
+    tags: string[]
+  }
+
+  const posts = await Astro.glob<Frontmatter>('../../publish/product/*.md')
+
+  return posts.map((post) => ({
+    params: { slug: post.file?.match(/([\w\-]*).md$/)?.[1] },
+    props: {
+      post,
+    },
+  }))
+}
+
+const { Content, frontmatter } = Astro.props.post
+---
+
+<Product frontmatter={frontmatter}>
+  <Content />
+</Product>

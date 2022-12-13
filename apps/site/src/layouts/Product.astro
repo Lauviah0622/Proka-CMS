@@ -1,0 +1,48 @@
+---
+import Base from './Base.astro'
+import TagsList from '~/components/TagsList.astro'
+import { Image } from '@astrojs/image/components'
+import Button from '~/components/lib/Button.astro'
+import Tag from '~/components/lib/Tag.astro'
+
+type Url = string
+
+interface Props {
+  frontmatter: {
+    product_title: string
+    product_description: string
+    product_avatar: Url
+    avatar: Url
+    product_categories: string[]
+  }
+}
+
+const { frontmatter } = Astro.props
+---
+
+<Base>
+  <div class="article">
+    <div class="my-4">
+      {
+        frontmatter.product_categories.map((tag) => (
+          <Tag size="medium" pill>
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </Tag>
+        ))
+      }
+    </div>
+    <div class="flex">
+      <div class="flex-grow mr-10">
+        <img class="object-cover w-full" src={frontmatter.avatar} />
+      </div>
+      <div class="basis-20">
+        <h1 class="py-5">{frontmatter.product_title}</h1>
+        <p>{frontmatter.product_description}</p>
+        <Button>放入購物車</Button>
+      </div>
+    </div>
+    <div>
+      <slot />
+    </div>
+  </div>
+</Base>
