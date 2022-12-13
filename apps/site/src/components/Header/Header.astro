@@ -1,12 +1,11 @@
 ---
-import RssIcon from "~/components/icons/Rss.astro";
-import Logo from "../Logo.astro";
-import ThemeToggle from "./ThemeToggle.astro";
-import metadata from '~/metadata';
-import css from "~/utils/css";
+import RssIcon from '~/components/icons/Rss.astro'
+import Logo from '../Logo.astro'
+import ThemeToggle from './ThemeToggle.astro'
+import metadata from '~/metadata'
+import css from '~/utils/css'
 
 const pathname = Astro.url.pathname.replace(/\/$/, '')
-
 ---
 
 <style>
@@ -24,7 +23,7 @@ const pathname = Astro.url.pathname.replace(/\/$/, '')
       margin-top: 0;
     }
 
-    &>div {
+    & > div {
       width: 100%;
       display: flex;
       align-items: flex-end;
@@ -36,7 +35,6 @@ const pathname = Astro.url.pathname.replace(/\/$/, '')
       margin-top: 20px;
       background-color: transparent;
     }
-
   }
 
   :global(.header__items) {
@@ -44,14 +42,12 @@ const pathname = Astro.url.pathname.replace(/\/$/, '')
     align-items: baseline;
     gap: clamp(10px, 2vw, 2ch);
 
-
-
     --size: min(5vw, 1.5rem);
 
     & :global(.rss) {
       inline-size: var(--size);
       block-size: var(--size);
-      fill: var(--color-primary)
+      fill: var(--color-primary);
     }
   }
 
@@ -63,42 +59,49 @@ const pathname = Astro.url.pathname.replace(/\/$/, '')
     gap: 1.5rem;
     margin-bottom: 4px;
 
-
-
-    &>a {
+    & > a {
       font-size: 1rem;
       font-weight: normal;
       color: var(--color-text-secondary);
       text-transform: capitalize;
       text-decoration: underline;
       text-decoration-thickness: 2px;
-      
+
       text-decoration-color: transparent;
 
-      @nest &.current,
-      &:hover,
-      &.currnent:hover {
+      @nest &.current, &:hover, &.currnent:hover {
         text-decoration-color: var(--color-secondary);
         text-decoration-skip-ink: none;
         text-decoration-thickness: 3px;
       }
 
       @media (prefers-reduced-motion: no-preference) {
-        transition: text-decoration-color .2s;
+        transition: text-decoration-color 0.2s;
       }
     }
   }
 </style>
 
 <>
-
   <header class="center center--wide">
     <div>
       <nav class="nav">
         <Logo />
-        {Object.entries(metadata.navLink).map(([text, link]) =>
-        <a href={link} class={css('only-desktop', pathname===link || (link==='/' && pathname==='' ) ? 'current' : ''
-          )}>{text}</a>)}
+        {
+          Object.entries(metadata.navLink).map(([text, link]) => (
+            <a
+              href={link}
+              class={css(
+                'only-desktop',
+                pathname === link || (link === '/' && pathname === '')
+                  ? 'current'
+                  : ''
+              )}
+            >
+              {text}
+            </a>
+          ))
+        }
       </nav>
 
       <div class="header__items">
@@ -108,6 +111,5 @@ const pathname = Astro.url.pathname.replace(/\/$/, '')
         </a>
       </div>
     </div>
-
   </header>
 </>

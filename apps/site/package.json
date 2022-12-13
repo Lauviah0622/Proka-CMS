@@ -24,6 +24,7 @@
     "postcss-import": "^14.1.0",
     "postcss-nesting": "^10.1.10",
     "postcss-windicss": "^1.0.0",
+    "prettier-plugin-astro": "^0.7.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-figure": "^1.0.1",
     "rehype-highlight": "^5.0.2",

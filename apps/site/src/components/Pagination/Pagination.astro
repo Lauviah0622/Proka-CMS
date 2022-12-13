@@ -1,27 +1,21 @@
 ---
-import Item from './Item.astro';
-import Goto from './GoTo';
+import Item from './Item.astro'
+import Goto from './GoTo'
 
-const { page, baseUrl } = Astro.props;
-
-
+const { page, baseUrl } = Astro.props
 
 const {
-  url: {
-    next,
-    prev,
-    current
-  },
+  url: { next, prev, current },
   currentPage,
-  start,  //目前頁面的第幾個開始
+  start, //目前頁面的第幾個開始
   end, //目前頁面從第幾個結束
   total, //總共有幾個東西
   size, //一頁有幾個東西
-  lastPage
-} = page;
+  lastPage,
+} = page
 
 const getCloseNumber = (current, lastPage, amount) => {
-  const side = Math.floor(amount / 2);
+  const side = Math.floor(amount / 2)
   let from = current - side
   let to = current + side
 
@@ -35,7 +29,7 @@ const getCloseNumber = (current, lastPage, amount) => {
   return [from, to]
 }
 
-const [from, to] = getCloseNumber(currentPage, lastPage, 4);
+const [from, to] = getCloseNumber(currentPage, lastPage, 4)
 
 // TODO: test
 const pages = ((from: number, to: number, lastPage: number) => {
@@ -59,19 +53,17 @@ const pages = ((from: number, to: number, lastPage: number) => {
         temp.push(i)
       }
     }
-
   }
 
   return res
 })(from, to, lastPage)
 
-
 const items = pages.map((page) => {
   if (Array.isArray(page)) {
     return {
-      url: page.map(p => current.replace(currentPage, p)),
+      url: page.map((p) => current.replace(currentPage, p)),
       text: '...',
-      isCurrent: false
+      isCurrent: false,
     }
   } else if (page === 1) {
     return {
@@ -86,10 +78,7 @@ const items = pages.map((page) => {
       isCurrent: page === currentPage,
     }
   }
-
 })
-
-
 ---
 
 <style>
@@ -112,7 +101,7 @@ const items = pages.map((page) => {
     justify-content: center;
   }
 
-  ul :global(li)> :global(a):empty {
+  ul :global(li) > :global(a):empty {
     display: inline-block;
     width: 4ch;
   }
@@ -123,14 +112,18 @@ const items = pages.map((page) => {
 </style>
 <div class="wrapper">
   <ul>
-    {prev ? <Item url={prev}>prev</Item> :
-    <Item></Item>}
+    {prev ? <Item url={prev}>prev</Item> : <Item />}
   </ul>
   <ul>
-    {items.map(({url, text, isCurrent}) =>
-    <Item isCurrent={isCurrent} url={url}>{text}</Item>)}
+    {
+      items.map(({ url, text, isCurrent }) => (
+        <Item isCurrent={isCurrent} url={url}>
+          {text}
+        </Item>
+      ))
+    }
   </ul>
   <ul>
-    {next ? <Item url={next}>next</Item> : <Item></Item>}
+    {next ? <Item url={next}>next</Item> : <Item />}
   </ul>
 </div>

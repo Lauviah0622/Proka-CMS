@@ -6,8 +6,7 @@ const { headings } = Astro.props
 ---
 
 <aside>
-  {headings &&
-  <Toc client:media="(min-width: 80em)" headings={headings} />}
+  {headings && <Toc client:media="(min-width: 80em)" headings={headings} />}
 </aside>
 
 <style>

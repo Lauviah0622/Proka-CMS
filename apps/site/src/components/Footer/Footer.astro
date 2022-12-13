@@ -1,7 +1,7 @@
 ---
-import Logo from "~/components/Logo.astro";
-import GithubIcon from "~/components/icons/Github.astro";
-import RssIcon from "~/components/icons/Rss.astro";
+import Logo from '~/components/Logo.astro'
+import GithubIcon from '~/components/icons/Github.astro'
+import RssIcon from '~/components/icons/Rss.astro'
 ---
 
 <footer class="center">
@@ -17,9 +17,7 @@ import RssIcon from "~/components/icons/Rss.astro";
         </a>
       </div>
     </div>
-    <p class="copyright">
-      © 2022-present Lavi. All Rights Reserved.
-    </p>
+    <p class="copyright">© 2022-present Lavi. All Rights Reserved.</p>
   </div>
 </footer>
 
@@ -35,7 +33,6 @@ import RssIcon from "~/components/icons/Rss.astro";
     align-items: baseline;
   }
 
-  
   .icons {
     display: flex;
     margin-left: auto;
@@ -55,12 +52,12 @@ import RssIcon from "~/components/icons/Rss.astro";
   }
 
   footer :global(.logo) {
-    --logo-size: calc(min(3.5vw, 1rem) * 0.8)
+    --logo-size: calc(min(3.5vw, 1rem) * 0.8);
     /* transform: scale(0.8); */
   }
 
   .copyright {
-    font-size: .6em;
+    font-size: 0.6em;
     color: var(--color-text-secondary);
     margin-top: 5em;
   }

@@ -1,10 +1,9 @@
 ---
-import ThemeIcon from "./ThemeIcon.astro"
+import ThemeIcon from './ThemeIcon.astro'
 ---
 
 <style is:global>
   .theme-toggle {
-    
     background: none;
     border: none;
     padding: 0;
@@ -24,17 +23,23 @@ import ThemeIcon from "./ThemeIcon.astro"
     --icon-fill: var(--color-primary);
     --icon-fill-hover: var(--color-secondary);
 
-    &>svg {
+    & > svg {
       inline-size: 100%;
       block-size: 100%;
     }
 
-    @media (hover:none) {
+    @media (hover: none) {
       /* --size: 48px; */
     }
   }
 </style>
 <!-- reference to https://web.dev/building-a-theme-switch-component/ -->
-<button class="theme-toggle" id="theme-toggle" aria-label="auto" title="Toggle loght and dark theme" aria-live="polite">
+<button
+  class="theme-toggle"
+  id="theme-toggle"
+  aria-label="auto"
+  title="Toggle loght and dark theme"
+  aria-live="polite"
+>
   <ThemeIcon />
 </button>

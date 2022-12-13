@@ -5,8 +5,8 @@ author: Lavi
 date: 2022-12-05T13:58:29.487Z
 tags:
   - Tags
-
 ---
+
 # h1 Heading 8-)
 
 ## h2 Heading
@@ -21,11 +21,11 @@ tags:
 
 ## Horizontal Rules
 
-- - -
+---
 
-- - -
+---
 
-- - -
+---
 
 ## Typographic replacements
 
@@ -35,7 +35,7 @@ Enable typographer option to see result.
 
 test.. test... test..... test?..... test!....
 
-!!!!!! ???? ,,  -- ---
+!!!!!! ???? ,, -- ---
 
 "Smartypants, double quotes" and 'single quotes'
 
@@ -45,9 +45,9 @@ test.. test... test..... test?..... test!....
 
 **This is bold text**
 
-*This is italic text*
+_This is italic text_
 
-*This is italic text*
+_This is italic text_
 
 ~~Strikethrough~~
 
@@ -63,15 +63,16 @@ test.. test... test..... test?..... test!....
 
 Unordered
 
-* Create a list by starting a line with `+`, `-`, or `*`
-* Sub-lists are made by indenting 2 spaces:
+- Create a list by starting a line with `+`, `-`, or `*`
+- Sub-lists are made by indenting 2 spaces:
 
-  * Marker character change forces new list start:
+  - Marker character change forces new list start:
 
-    * Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    * Nulla volutpat aliquam velit
-* Very easy!
+    - Ac tristique libero volutpat at
+    - Facilisis in pretium nisl aliquet
+    - Nulla volutpat aliquam velit
+
+- Very easy!
 
 Ordered
 
@@ -109,10 +110,10 @@ Syntax highlighting
 
 ```js
 var foo = function (bar) {
-  return bar++;
-};
+  return bar++
+}
 
-console.log(foo(5));
+console.log(foo(5))
 ```
 
 ## Tables
@@ -135,18 +136,18 @@ Right aligned columns
 
 [link text](http://dev.nodeca.com)
 
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
+[link with title](http://nodeca.github.io/pica/demo/ 'title text!')
 
 Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
 ## Images
 
 ![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg 'The Stormtroopocat')
 
 Like links, Images also have a footnote style syntax
 
-![Alt text](https://octodex.github.com/images/dojocat.jpg "The Dojocat")
+![Alt text](https://octodex.github.com/images/dojocat.jpg 'The Dojocat')
 
 With a reference later in the document defining the URL location:
 
@@ -165,8 +166,8 @@ see [how to change output](https://github.com/markdown-it/markdown-it-emoji#chan
 
 ### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
 
-* 19^th^
-* H\~2\~O
+- 19^th^
+- H\~2\~O
 
 ### [<ins>](https://github.com/markdown-it/markdown-it-ins)
 
@@ -198,12 +199,12 @@ and multiple paragraphs.
 
 Term 1
 
-:   Definition 1
+: Definition 1
 with lazy continuation.
 
-Term 2 with *inline markup*
+Term 2 with _inline markup_
 
-:   Definition 2
+: Definition 2
 
 ```
     { some code, part of Definition 2 }
@@ -211,14 +212,14 @@ Term 2 with *inline markup*
 Third paragraph of definition 2.
 ```
 
-*Compact style:*
+_Compact style:_
 
 Term 1
-  ~ Definition 1
+~ Definition 1
 
 Term 2
-  \~ Definition 2a
-  \~ Definition 2b
+\~ Definition 2a
+\~ Definition 2b
 
 ### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
 
@@ -231,5 +232,5 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 ### [Custom containers](https://github.com/markdown-it/markdown-it-container)
 
 ::: warning
-*here be dragons*
+_here be dragons_
 :::

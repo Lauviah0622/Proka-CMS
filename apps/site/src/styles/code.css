@@ -1,4 +1,3 @@
-
 .token {
   &.block-comment,
   &.cdata,
@@ -63,4 +62,3 @@
     color: green;
   }
 }
-
